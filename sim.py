@@ -25,7 +25,7 @@ ENERGY_WASTE = 13       # energy each cell costs its tree per tick
 ENERGY_FOR_START = 300  # energy a new tree (seed) starts with
 ENERGY_TO_GROW = 18     # energy a sprout needs before it branches and turns into wood
 SUN_LAYERS = 3          # sunlight passes through 3 cells: top gets level*3, then *2, then *1
-LIFE_MIN, LIFE_SPREAD = 88, 5  # lifespan = 88..92 ticks
+LIFE_MIN, LIFE_SPREAD = 150, 30  # lifespan = 88..92 ticks
 MUTATION_CHANCE = 4     # 1 in 4 seeds gets one mutation
 STEPS_PER_GENERATION = 90
 
