@@ -77,6 +77,36 @@ another tree dies; one that reaches the ground takes root.
 **Mutation.** Each seed has a 1 in 4 chance of one random genome value being replaced with a
 new value from 0–63.
 
+## Play with the numbers
+
+The world's laws of physics are a handful of constants at the top of `sim.py`. Change them
+however you like and see what evolution comes up with. There's no right answer, and tiny tweaks
+can lead to completely different forests.
+
+| Constant | Default | What it controls |
+|---|---|---|
+| `SUN_LAYERS` | `3` | how many cells deep sunlight reaches in each column |
+| `LEVEL_BIAS` | `6` | how much height matters: lower makes the top of the sky much richer than the ground |
+| `ENERGY_WASTE` | `13` | energy each cell costs per tick, which is the price of being big |
+| `ENERGY_TO_GROW` | `18` | energy a sprout needs before it branches |
+| `ENERGY_FOR_START` | `300` | energy a seed starts life with |
+| `LIFE_MIN`, `LIFE_SPREAD` | `88`, `5` | lifespan: 88 to 92 ticks |
+| `MUTATION_CHANCE` | `4` | 1 in N seeds mutates (1 = every seed, 100 = rarely) |
+| `WIDTH`, `HEIGHT` | `256`, `100` | world size (raise `MAX_CELLS` too for a much bigger world) |
+
+Some things to try:
+- **`SUN_LAYERS = 1`**: only the very top cell gets light. Do trees race upward, or spread flat?
+- **Cheaper or pricier cells** (`ENERGY_WASTE`): see whether trees get bushier or skinnier.
+- **Longer lives** (`LIFE_MIN = 300`): giant old trees, or a crowded field nobody can grow in?
+- **`MUTATION_CHANCE = 1`**: lots of variety, but can good designs survive the constant change?
+
+For looks only, `PASTEL` and `RIM` at the top of `main.py` change how soft the colors are and
+how thick the cell edges look.
+
+Saves from `genomes/` still load after you change physics constants. The trees just live by the
+new rules, and some of them won't cope. Changing `GENES` makes the genome a different size, so
+old saves won't work after that. Start from random genomes instead.
+
 ## Headless runs
 
 Run without a window, which is useful for long evolutions or servers:
